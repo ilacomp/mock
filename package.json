@@ -1,0 +1,19 @@
+{
+  "name": "mock",
+  "version": "1.0.0",
+  "description": "http mock server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-http-proxy": "^0.10.1",
+    "glob": "^7.1.1",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {}
+}

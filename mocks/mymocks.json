@@ -1,0 +1,24 @@
+{
+  "method": "post",
+  "uri": "/a/b",
+  "status": 403,
+  "response": {
+    "answer": "ok"
+  },
+  "headers": [
+    {
+      "name": "Myheader",
+      "value": "Myvalue"
+    },
+    {
+      "name": "Anything-else",
+      "value": "More values"
+    }
+  ],
+  "cookies": [
+    {
+      "name": "mycookie",
+      "value": "something"
+    }
+  ]
+}

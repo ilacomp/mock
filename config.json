@@ -1,0 +1,9 @@
+{
+	"port": 3000,
+	"proxies": [
+		{
+			"uri": "/auth",
+			"host": "google.com"
+		}
+	]
+}
