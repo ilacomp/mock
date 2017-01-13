@@ -1,5 +1,8 @@
 {
-	"port": 3000,
+	"http-port": 3000,
+	"https-port": 0,
+	"private-key": "sslcert/server.key",
+	"cert": "sslcert/server.crt",
 	"proxies": [
 		{
 			"uri": "/auth",

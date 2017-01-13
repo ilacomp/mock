@@ -4,6 +4,9 @@ var config = require('./config'),
 	httpProxy = require('express-http-proxy'),
 	mocks = require('./constructor'),
 	logger = require('morgan'),
+	fs = require('fs'),
+	http = require('http'),
+	https = require('https'),
 	app = express();
 
 //Log requests
@@ -43,6 +46,18 @@ app.use(function (err, req, res, next) {
 	res.send(err.message);
 });
 
-app.listen(config.port, function () {
-	console.log('Mock app listening on port', config.port);
+var httpServer = http.createServer(app);
+httpServer.listen(config['http-port'], function () {
+	console.log('Mock app listening on port', config['http-port']);
+});
+
+if (!config['https-port']) return;
+
+var privateKey  = fs.readFileSync(config['private-key'], 'utf8');
+var certificate = fs.readFileSync(config['cert'], 'utf8');
+var credentials = {key: privateKey, cert: certificate};
+var httpsServer = https.createServer(credentials, app);
+
+httpsServer.listen(config['https-port'], function () {
+	console.log('Mock app listening on port', config['https-port']);
 });
