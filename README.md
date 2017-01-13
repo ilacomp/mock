@@ -33,28 +33,30 @@ Edit config.json
 ###Simple mock
 Create json file in mocks folder
 ```js
-"method": "post",
-"uri": "/a/b",
-"status": 403,
-"response": {
-"answer": "ok"
-},
-"headers": [
 {
-  "name": "Myheader",
-  "value": "Myvalue"
-},
-{
-  "name": "Anything-else",
-  "value": "More values"
+    "method": "post",
+    "uri": "/a/b",
+    "status": 403,
+    "response": {
+    "answer": "ok"
+    },
+    "headers": [
+    {
+      "name": "Myheader",
+      "value": "Myvalue"
+    },
+    {
+      "name": "Anything-else",
+      "value": "More values"
+    }
+    ],
+    "cookies": [
+    {
+      "name": "mycookie",
+      "value": "something"
+    }
+    ]
 }
-],
-"cookies": [
-{
-  "name": "mycookie",
-  "value": "something"
-}
-]
 ```
 ###Advanced mock
 You can create your own mock function using NodeJS and express framework.
