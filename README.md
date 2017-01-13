@@ -38,7 +38,7 @@ Create json file in mocks folder
     "uri": "/a/b",
     "status": 403,
     "response": {
-    "answer": "ok"
+        "answer": "ok"
     },
     "headers": [
     {
@@ -51,10 +51,10 @@ Create json file in mocks folder
     }
     ],
     "cookies": [
-    {
-      "name": "mycookie",
-      "value": "something"
-    }
+        {
+          "name": "mycookie",
+          "value": "something"
+        }
     ]
 }
 ```
