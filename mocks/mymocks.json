@@ -1,6 +1,6 @@
 {
   "method": "post",
-  "uri": "/a/b",
+  "uri": "/a/:b",
   "status": 403,
   "response": {
     "answer": "ok"
