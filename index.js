@@ -1,5 +1,5 @@
 var path = require('path'),
-	mockServer = require('./constructor');
+	simpleMock = require('simple-http-mock');
 
 var config = {
 	mocksDir: path.join(__dirname, 'mocks'),
@@ -22,26 +22,26 @@ var config = {
 };
 
 //Start mock server
-//mockServer.startServer(config);
+simpleMock.startServer(config);
 
-//Or just add mocks to our existing app
-var express = require('express'),
-	app = express();
-app.use(mockServer.mocks(config));
-
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-	var err = new Error('Not Found');
-	err.status = 404;
-	next(err);
-});
-
-// error handlers
-app.use(function (err, req, res, next) {
-	res.status(err.status || 500);
-	res.send(err.message);
-});
-
-app.listen(3000, function () {
-	console.log('Mock app listening on port 3000');
-});
+// //Or just add mocks to our existing app
+// var express = require('express'),
+// 	app = express();
+// app.use(simpleMock.mocks(config));
+//
+// // catch 404 and forward to error handler
+// app.use(function (req, res, next) {
+// 	var err = new Error('Not Found');
+// 	err.status = 404;
+// 	next(err);
+// });
+//
+// // error handlers
+// app.use(function (err, req, res, next) {
+// 	res.status(err.status || 500);
+// 	res.send(err.message);
+// });
+//
+// app.listen(3000, function () {
+// 	console.log('Mock app listening on port 3000');
+// });
